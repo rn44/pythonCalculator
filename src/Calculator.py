@@ -33,7 +33,8 @@ def squared(a):
 
 
 def sqroot(a):
-    b = a * (1/2)
+    a = float(a)
+    b = round(a * (1/2), 9)
     return b
 
 
