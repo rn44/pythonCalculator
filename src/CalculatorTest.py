@@ -60,9 +60,12 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.square(row['Value 1']), int(row['Result']))
         file_data.clear()
 
-    # def test_root_method_calculator(self):
-    #     filepath = './src/unitTests/Unit Test Square Root.csv'
-    #     self.assertEqual(self.calculator.root(9), 3)
+    def test_root_method_calculator(self):
+        filepath = './src/unitTests/Unit Test Square Root.csv'
+        file_data = self.datafile.parse(filepath)
+        for row in file_data:
+            self.assertEqual(round(self.calculator.root(row['Value 1']), 8), round(float(row['Result']), 8))
+        file_data.clear()
 
 
 if __name__ == '__main__':
