@@ -10,4 +10,5 @@
   * 103020
     * complete CSV parsing
     * update unit tests to use CSV instead of hard coded values
-    * continue research on root formula  
+    * continue research on root formula
+    * corrected square root formula  
