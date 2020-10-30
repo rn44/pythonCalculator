@@ -1,13 +1,22 @@
 import csv
+from pprint import pprint
 
 
-def __init__ (self, filepath):
-    with open(filepath) as csv_file:
-        csv_reader = csv.reader(csv_file, delimiter=',')
-        line_count = 0
-        for row in csv_reader:
-            if line_count == 0:
-                line_count += 1
-            else:
+# def ClassFactory(class_name, dictionary):
+#     return type(class_name, (object,), dictionary)
+
+
+class ParseInputFiles:
+    data = []
+
+    def __init__(self):
+        pass
+
+    def parse(self, filepath):
+        with open(filepath, 'r') as csv_file:
+            csv_reader = csv.DictReader(csv_file, delimiter=',')
+            for row in csv_reader:
                 self.data.append(row)
-    pass
+                # print(row)
+        return self.data
+
