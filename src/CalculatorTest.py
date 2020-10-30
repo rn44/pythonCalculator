@@ -15,6 +15,16 @@ class MyTestCase(unittest.TestCase):
     def test_results_property_calculator(self):
         self.assertEqual(self.calculator.result, 0)
 
+    def test_instantiate_parser(self):
+        self.assertIsInstance(self.datafile, ParseInputFiles)
+
+#    def test_file_parser(self):
+#        filepath = './src/unitTests/Unit Test Addition.csv'
+#        file_data = self.datafile.parse(filepath)
+#        for row in file_data:
+#            print(row)
+#        file_data.clear()
+
     def test_add_method_calculator(self):
         filepath = './src/unitTests/Unit Test Addition.csv'
         file_data = self.datafile.parse(filepath)
