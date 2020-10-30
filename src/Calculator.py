@@ -18,6 +18,16 @@ def division(a, b):
     return c
 
 
+def squared(a):
+    b = a * a
+    return b
+
+
+def sqroot(a):
+    b = a * (1/2)
+    return b
+
+
 class Calculator:
     result = 0
 
@@ -38,4 +48,12 @@ class Calculator:
 
     def divide(self, a, b):
         self.result = division(a, b)
+        return self.result
+
+    def square(self, a):
+        self.result = squared(a)
+        return self.result
+
+    def root(self, a):
+        self.result = sqroot(a)
         return self.result
