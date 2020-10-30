@@ -21,11 +21,14 @@ class MyTestCase(unittest.TestCase):
         file_data = self.datafile.parse(filepath)
         for row in file_data:
             self.assertEqual(self.calculator.add(row['Value 2'], row['Value 1']), int(row['Result']))
-        # self.assertEqual(self.calculator.add(2, 2), 4)
+        file_data.clear()
 
     def test_subtraction_method_calculator(self):
-        filepath = './unitTests/Unit Test Subtraction.csv'
-        self.assertEqual(self.calculator.subtract(2, 2), 0)
+        filepath = './src/unitTests/Unit Test Subtraction.csv'
+        file_data = self.datafile.parse(filepath)
+        for row in file_data:
+            self.assertEqual(self.calculator.subtract(row['Value 2'], row['Value 1']), int(row['Result']))
+        file_data.clear()
 
     def test_multiplication_method_calculator(self):
         filepath = './unitTests/Unit Test Multiplication.csv'
