@@ -34,7 +34,7 @@ def squared(a):
 
 def sqroot(a):
     a = float(a)
-    b = round(a * (1/2), 9)
+    b = a ** (1/2)
     return b
 
 
