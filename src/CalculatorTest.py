@@ -34,7 +34,7 @@ class MyTestCase(unittest.TestCase):
         filepath = './src/unitTests/Unit Test Multiplication.csv'
         file_data = self.datafile.parse(filepath)
         for row in file_data:
-            self.assertEqual(self.calculator.multiply(row['Value 2'], row['Value 1']), float(row['Result']))
+            self.assertEqual(self.calculator.multiply(row['Value 2'], row['Value 1']), int(row['Result']))
         file_data.clear()
 
     def test_division_method_calculator(self):
@@ -44,9 +44,12 @@ class MyTestCase(unittest.TestCase):
             self.assertEqual(self.calculator.divide(row['Value 2'], row['Value 1']), float(row['Result']))
         file_data.clear()
 
-#    def test_squared_method_calculator(self):
-#        filepath = './src/unitTests/Unit Test Square.csv'
-#        self.assertEqual(self.calculator.square(3), 9)
+    def test_squared_method_calculator(self):
+        filepath = './src/unitTests/Unit Test Square.csv'
+        file_data = self.datafile.parse(filepath)
+        for row in file_data:
+            self.assertEqual(self.calculator.square(row['Value 1']), int(row['Result']))
+        file_data.clear()
 
     # def test_root_method_calculator(self):
     #     filepath = './src/unitTests/Unit Test Square Root.csv'
