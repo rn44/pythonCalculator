@@ -2,7 +2,6 @@ import unittest
 
 from Calculator import Calculator
 from ParseInputFiles import ParseInputFiles
-from pprint import pprint
 
 
 class MyTestCase(unittest.TestCase):
